@@ -1,0 +1,36 @@
+# Environnements et caches Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.matplotlib_cache/
+
+# Configuration locale et secrets
+.env
+*.env.local
+
+# Données d'authentification et journaux locaux
+data/auth.db
+data/auth.db-*
+logs/
+
+# Fichiers système et éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.venv/
+__pycache__/
+*.pyc
+.venv/
+__pycache__/
+__pycache__/
+*.pyc
+.venv/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env

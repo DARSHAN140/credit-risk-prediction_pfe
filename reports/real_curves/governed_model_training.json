@@ -1,0 +1,33 @@
+{
+  "model": "xgboost",
+  "variant": "governed_conservative_features",
+  "features": [
+    "age",
+    "situation_familiale",
+    "nombre_personnes_charge",
+    "niveau_etude",
+    "type_logement",
+    "statut_professionnel",
+    "type_contrat",
+    "anciennete_emploi_mois",
+    "revenu_mensuel",
+    "charges_mensuelles",
+    "type_credit",
+    "montant_credit",
+    "duree_mois",
+    "apport_personnel",
+    "credits_en_cours",
+    "solde_moyen_compte",
+    "anciennete_bancaire_mois",
+    "taux_interet"
+  ],
+  "metrics": {
+    "accuracy": 0.803,
+    "precision": 0.8078880407124682,
+    "recall": 0.7232346241457859,
+    "f1": 0.7632211538461539,
+    "roc_auc": 0.8917491696409356,
+    "gini": 0.7834983392818713,
+    "ks": 0.6345658785361318
+  }
+}

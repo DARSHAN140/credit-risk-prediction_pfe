@@ -1,0 +1,36 @@
+\begin{table}[htbp]
+\centering
+\caption{Comparaison des modeles recalibres sur le jeu de test}
+\label{tab:comparaison_modeles}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Metric} & \textbf{Logistic Regression} & \textbf{Decision Tree} & \textbf{Random Forest} & \textbf{XGBoost} & \textbf{LightGBM} \\
+\hline
+Accuracy & 82.88\% & 82.05\% & 83.05\% & 81.35\% & 85.05\% \\
+\hline
+Precision & 79.06\% & 78.08\% & 77.81\% & 75.87\% & 80.77\% \\
+\hline
+Recall & 82.97\% & 82.18\% & 85.88\% & 84.34\% & 86.56\% \\
+\hline
+F1-score & 80.97\% & 80.08\% & 81.65\% & 79.88\% & 83.56\% \\
+\hline
+ROC-AUC & 90.09\% & 90.49\% & 90.95\% & 89.40\% & 92.22\% \\
+\hline
+Gini & 80.18\% & 80.98\% & 81.89\% & 78.79\% & 84.43\% \\
+\hline
+KS & 66.14\% & 64.41\% & 67.21\% & 63.50\% & 70.71\% \\
+\hline
+PR-AUC & 89.41\% & 89.25\% & 89.79\% & 87.58\% & 91.30\% \\
+\hline
+Brier Score $\downarrow$ & 0.124 & 0.124 & 0.118 & 0.130 & 0.107 \\
+\hline
+ECE $\downarrow$ & 0.049 & 0.040 & 0.017 & 0.033 & 0.019 \\
+\hline
+Selected threshold & 0.455 & 0.432 & 0.400 & 0.401 & 0.406 \\
+\hline
+\end{tabular}
+\end{table}
+
+The best ranking model is LightGBM, with a test ROC-AUC of 92.22\%. At the validation-selected threshold of 0.406, its accuracy is 85.05\%, precision is 80.77\%, recall is 86.56\%, and F1-score is 83.56\%. Thresholds were selected before examining the test labels.

@@ -1,0 +1,24 @@
+{
+  "source": "predict_proba du modele XGBoost recalibre par sigmoid sur validation separee sur le jeu de test",
+  "dataset_is_synthetic": true,
+  "n_test": 4000,
+  "positive_rate_test": 0.439,
+  "auc": 0.8939737807527235,
+  "accuracy": 0.8135,
+  "precision_risky": 0.7587090163934426,
+  "recall_risky": 0.8433940774487472,
+  "f1_risky": 0.7988133764832794,
+  "gini": 0.787947561505447,
+  "ks": 0.6349871487215719,
+  "ks_threshold": 0.3908993601799011,
+  "configured_threshold": 0.4013597369194031,
+  "brier_score": 0.13037354524058156,
+  "ece": 0.03335088205663486,
+  "calibration_bins": 10,
+  "confusion_matrix_at_selected_threshold": {
+    "tn": 1773,
+    "fp": 471,
+    "fn": 275,
+    "tp": 1481
+  }
+}

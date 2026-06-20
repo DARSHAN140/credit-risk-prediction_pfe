@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accès sécurisé — Credit Risk</title>
+  <link rel="stylesheet" href="/static/auth.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="brand-panel">
+      <div class="brand-mark" aria-hidden="true">BR</div>
+      <div class="brand-copy">
+        <p class="eyebrow">BMCE Credit Risk</p>
+        <h1>Décider avec confiance.</h1>
+        <p>Un accès sécurisé au moteur de scoring, aux analyses de risque et à l’administration des utilisateurs.</p>
+      </div>
+      <div class="security-note">
+        <span class="pulse"></span>
+        API protégée par JWT et contrôle des rôles
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <div id="message" class="message" role="alert" hidden></div>
+
+      <form id="login-form" class="card" autocomplete="on">
+        <p class="eyebrow">Espace sécurisé</p>
+        <h2>Connexion</h2>
+        <p class="muted">Utilisez votre compte professionnel.</p>
+
+        <label for="login-username">Nom d’utilisateur</label>
+        <input id="login-username" name="username" autocomplete="username" required>
+
+        <label for="login-password">Mot de passe</label>
+        <div class="password-field">
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+          <button class="reveal" type="button" data-target="login-password" aria-label="Afficher le mot de passe">Afficher</button>
+        </div>
+
+        <button class="primary" type="submit">Se connecter</button>
+        <p class="fine-print">Le jeton expire automatiquement après 30 minutes.</p>
+      </form>
+
+      <form id="bootstrap-form" class="card" hidden>
+        <p class="eyebrow">Première installation</p>
+        <h2>Créer l’administrateur</h2>
+        <p class="muted">Cette étape ne sera disponible qu’une seule fois.</p>
+
+        <label for="bootstrap-username">Nom d’utilisateur</label>
+        <input id="bootstrap-username" required minlength="3" autocomplete="username">
+
+        <label for="bootstrap-email">E-mail</label>
+        <input id="bootstrap-email" type="email" required autocomplete="email">
+
+        <label for="bootstrap-password">Mot de passe</label>
+        <div class="password-field">
+          <input id="bootstrap-password" type="password" required minlength="10" autocomplete="new-password">
+          <button class="reveal" type="button" data-target="bootstrap-password">Afficher</button>
+        </div>
+        <p class="password-hint">10 caractères minimum, avec majuscule, minuscule et chiffre.</p>
+
+        <button class="primary" type="submit">Initialiser l’accès</button>
+      </form>
+
+      <section id="account" class="card account" hidden>
+        <div class="account-header">
+          <div>
+            <p class="eyebrow">Session active</p>
+            <h2 id="welcome">Bienvenue</h2>
+          </div>
+          <span id="role-badge" class="role-badge"></span>
+        </div>
+        <p id="account-email" class="muted"></p>
+        <div class="actions">
+          <a class="primary link-button" href="/docs">Ouvrir l’API</a>
+          <button id="logout" class="secondary" type="button">Se déconnecter</button>
+        </div>
+      </section>
+
+      <section id="admin-panel" class="card admin-panel" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Administration</p>
+            <h2>Utilisateurs et rôles</h2>
+          </div>
+          <button id="refresh-users" class="icon-button" type="button" aria-label="Actualiser">↻</button>
+        </div>
+
+        <form id="create-user-form" class="user-form">
+          <input id="new-username" placeholder="Nom d’utilisateur" required minlength="3">
+          <input id="new-email" type="email" placeholder="E-mail" required>
+          <input id="new-password" type="password" placeholder="Mot de passe temporaire" required minlength="10">
+          <select id="new-role" aria-label="Rôle">
+            <option value="conseiller">Conseiller</option>
+            <option value="analyste">Analyste</option>
+            <option value="admin">Administrateur</option>
+          </select>
+          <button class="primary" type="submit">Ajouter</button>
+        </form>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Utilisateur</th><th>Rôle</th><th>État</th><th>Action</th></tr>
+            </thead>
+            <tbody id="users-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="/static/auth.js" defer></script>
+</body>
+</html>

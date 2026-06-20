@@ -1,0 +1,134 @@
+[
+  {
+    "candidate": "current",
+    "n_features": 46,
+    "auc": 0.9754470539510068,
+    "distance_to_0_89": 0.08544705395100682
+  },
+  {
+    "candidate": "drop_dti_reste",
+    "n_features": 44,
+    "auc": 0.9190705713844867,
+    "distance_to_0_89": 0.029070571384486654
+  },
+  {
+    "candidate": "drop_3_derived",
+    "n_features": 43,
+    "auc": 0.9070117123262641,
+    "distance_to_0_89": 0.017011712326264083
+  },
+  {
+    "candidate": "drop_financial_proxies",
+    "n_features": 41,
+    "auc": 0.900563360050999,
+    "distance_to_0_89": 0.010563360050999004
+  },
+  {
+    "candidate": "traditional_baseline",
+    "n_features": 14,
+    "auc": 0.8632702899963048,
+    "distance_to_0_89": 0.026729710003695173
+  },
+  {
+    "candidate": "baseline_plus_behavior",
+    "n_features": 22,
+    "auc": 0.9051847701184428,
+    "distance_to_0_89": 0.01518477011844277
+  },
+  {
+    "candidate": "base_plus_financial",
+    "n_features": 20,
+    "auc": 0.9030366728385286,
+    "distance_to_0_89": 0.013036672838528607
+  },
+  {
+    "candidate": "base_plus_incidents",
+    "n_features": 15,
+    "auc": 0.8642277914479107,
+    "distance_to_0_89": 0.025772208552089282
+  },
+  {
+    "candidate": "base_plus_delays",
+    "n_features": 15,
+    "auc": 0.8566927651159862,
+    "distance_to_0_89": 0.03330723488401377
+  },
+  {
+    "candidate": "base_plus_incidents_delays",
+    "n_features": 16,
+    "auc": 0.8688615097105316,
+    "distance_to_0_89": 0.02113849028946846
+  },
+  {
+    "candidate": "base_financial_incidents",
+    "n_features": 21,
+    "auc": 0.903560215243687,
+    "distance_to_0_89": 0.013560215243687002
+  },
+  {
+    "candidate": "base_financial_delays",
+    "n_features": 21,
+    "auc": 0.9005514325216523,
+    "distance_to_0_89": 0.010551432521652249
+  },
+  {
+    "candidate": "base_financial_without_epargne_mensuelle",
+    "n_features": 19,
+    "auc": 0.9016925417920326,
+    "distance_to_0_89": 0.011692541792032607
+  },
+  {
+    "candidate": "base_financial_without_mensualites_existantes",
+    "n_features": 19,
+    "auc": 0.8967563210829995,
+    "distance_to_0_89": 0.006756321082999506
+  },
+  {
+    "candidate": "base_financial_without_credits_en_cours",
+    "n_features": 19,
+    "auc": 0.9010105155128939,
+    "distance_to_0_89": 0.011010515512893893
+  },
+  {
+    "candidate": "base_financial_without_solde_moyen_compte",
+    "n_features": 19,
+    "auc": 0.9000757271224912,
+    "distance_to_0_89": 0.010075727122491163
+  },
+  {
+    "candidate": "base_financial_without_taux_interet",
+    "n_features": 19,
+    "auc": 0.8975357978146735,
+    "distance_to_0_89": 0.007535797814673506
+  },
+  {
+    "candidate": "base_financial_without_mensualites_existantes_taux_interet",
+    "n_features": 18,
+    "auc": 0.897041820455662,
+    "distance_to_0_89": 0.00704182045566204
+  },
+  {
+    "candidate": "base_financial_without_mensualites_existantes_solde_moyen_compte",
+    "n_features": 18,
+    "auc": 0.899817381912384,
+    "distance_to_0_89": 0.009817381912384016
+  },
+  {
+    "candidate": "base_financial_without_mensualites_existantes_epargne_mensuelle",
+    "n_features": 18,
+    "auc": 0.8917491696409356,
+    "distance_to_0_89": 0.0017491696409356328
+  },
+  {
+    "candidate": "base_financial_without_mensualites_existantes_credits_en_cours",
+    "n_features": 18,
+    "auc": 0.8881782703762805,
+    "distance_to_0_89": 0.0018217296237195146
+  },
+  {
+    "candidate": "base_financial_without_taux_interet_solde_moyen_compte",
+    "n_features": 18,
+    "auc": 0.9003584349457323,
+    "distance_to_0_89": 0.010358434945732298
+  }
+]

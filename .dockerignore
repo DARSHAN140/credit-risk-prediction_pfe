@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.git/
+.github/
+.pytest_cache/
+.matplotlib_cache/
+data/processed/
+reports/figures/*.png
+reports/*.pdf
+logs/*.csv
+logs/
+img/

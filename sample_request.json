@@ -1,0 +1,35 @@
+{
+  "data": {
+    "age": 35,
+    "sexe": "Homme",
+    "situation_familiale": "Marie",
+    "nombre_personnes_charge": 2,
+    "niveau_etude": "Bac+5",
+    "ville": "Casablanca",
+    "type_logement": "Locataire",
+    "statut_professionnel": "Salarie",
+    "type_contrat": "CDI",
+    "anciennete_emploi_mois": 72,
+    "secteur_activite": "Prive",
+    "revenu_mensuel": 16000,
+    "revenu_supplementaire": 1000,
+    "charges_mensuelles": 4500,
+    "credits_en_cours": 1,
+    "mensualites_existantes": 2500,
+    "epargne_mensuelle": 2200,
+    "solde_moyen_compte": 35000,
+    "incidents_paiement_12m": 0,
+    "retards_paiement_12m": 0,
+    "anciennete_bancaire_mois": 96,
+    "type_credit": "Personnel",
+    "montant_credit": 120000,
+    "duree_mois": 48,
+    "taux_interet": 7.2,
+    "mensualite_estimee": 2900,
+    "objet_credit": "Equipement",
+    "apport_personnel": 10000,
+    "ratio_apport": 8.3,
+    "taux_endettement": 31.8
+  }
+}
+

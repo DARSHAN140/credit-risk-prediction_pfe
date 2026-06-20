@@ -1,0 +1,185 @@
+% Chapter 2: State of the art and methods used
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french,english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{natbib}
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\selectlanguage{english}
+
+\chapter*{State of the art and methods used}
+\addcontentsline{toc}{chapter}{State of the art and methods used}
+
+\section*{Introduction}
+This chapter provides a thorough analysis of the relevant approaches and works related to the project. It is organized around three main themes: system alert prioritization, automation of their management, and preventive anomaly detection, all through artificial intelligence and machine learning. The main goal is to establish a clear and comprehensive framework of the state of the art in anomaly prevention and detection within IT systems in organizations.
+
+We begin by exploring the theoretical framework in which the project is set, accompanied by a literature review highlighting the convergence points between IT supervision and artificial intelligence. We then analyze how supervision systems centralize alerts and prioritize them based on their criticality, and review automation techniques and AI-based anomaly detection approaches. The chapter closes with a summary of methodological choices adopted in this project.
+
+\clearpage
+
+\section{State of the art}
+This section addresses the state of the art at the intersection of artificial intelligence and IT systems supervision. It analyzes academic works, industry reports, and practical applications concerning AI in automation, alert prioritization, and proactive anomaly detection within IT infrastructures. The goal is to provide a solid foundation of existing knowledge, highlight recent advances, and identify current limitations that this project seeks to overcome, notably in intelligent supervision and automated incident response.
+
+\subsection{Theoretical foundations of IT supervision}
+\textbf{Definition}
+
+IT supervision includes the practices and tools ensuring real-time monitoring and control of IT resources: servers, networks, databases, applications, etc. It aims to guarantee availability, performance, security, and reliability of the information system, while enabling anomaly detection, incident prevention, and continuous improvement. It is a strategic lever for business continuity and aligning IT with business objectives.
+
+\begin{itemize}
+\item \textbf{IT systems supervision activities}
+
+Supervision follows a structured process with six key steps (planning, detection & logging, filtering & correlation, classification, response, review) \citep{splunk2024supervision, stouffer2015}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5cm]{images/pfe_images/activités_supervision.png}
+    \caption{The six main steps of the IT systems supervision process}
+    \label{fig:etapes_supervision}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Planning:} Definition of elements to monitor, metrics, thresholds, correlation rules, and alert scenarios.
+    \item \textbf{Detection and logging:} Capturing critical events and recording them in logs.
+    \item \textbf{Filtering and correlation:} Reducing false positives and identifying related incidents.
+    \item \textbf{Classification:} Assigning category and criticality to events.
+    \item \textbf{Response:} Triggering manual or automated measures.
+    \item \textbf{Review:} Feedback to refine thresholds and rules.
+\end{itemize}
+
+\item \textbf{Supervision as a closed-loop control system:}
+
+Inspired by control and systems theory, IT supervision is designed as a closed-loop process (data collection, analysis, corrective action, feedback) \citep{stouffer2015}.
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{Reactive, proactive, and predictive approaches}
+
+These approaches differ by anticipation capability. Table~\ref{tab:approches_supervision} summarizes their characteristics and advantages.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of IT supervision approaches}
+\label{tab:approches_supervision}
+\begin{tabular}{@{}p{3cm}p{7cm}p{5cm}@{}}
+\toprule
+\textbf{Approach} & \textbf{Description} & \textbf{Advantages} \\
+\midrule
+Reactive & Detection and handling of incidents after they occur. & Immediate response to problems. \\
+Proactive & Anticipation of incidents before they occur. & Reduction of downtime and performance improvement. \\
+Predictive & Statistical and AI models to forecast future incidents. & Optimized planning and maintenance. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Artificial Intelligence and Machine Learning in Supervision}
+With the rapid evolution of IT systems, infrastructures are becoming increasingly complex and interconnected. Traditional static-rule tools reach limits when faced with high-volume, heterogeneous alerts. Integrating AI/ML enables proactive, intelligent, and automated analysis of monitoring data, moving from detection to anticipation and automated response \citep{Meta2024, Microsoft2024, BigPanda2024}.
+
+\subsubsection*{Foundations of AI and ML}
+AI aims to reproduce cognitive functions such as learning and decision-making. ML, at its core, relies on analyzing large volumes of data to identify patterns and improve predictions without explicit programming. In IT supervision this supports automatic anomaly detection, alert classification, grouping similar incidents, forecasting degradations, and recommending corrective actions.
+
+\subsubsection*{Types of learning}
+Supervised learning (labeled data), unsupervised learning (unlabeled data), and reinforcement learning (trial-and-error agents) are relevant depending on the use case (classification, anomaly detection, automated remediation).
+
+\subsubsection*{AI algorithms applied to supervision}
+Common algorithms include ensemble models (Random Forest, XGBoost), SVM for binary separation, deep networks for temporal data (LSTM, GRU), CNNs for structured log patterns, and unsupervised detectors (Isolation Forest, One-Class SVM). Clustering (K-Means, DBSCAN) helps group alerts \citep{du2017deeplog, hundman2018detecting}.
+
+\subsubsection*{Practical use cases}
+Examples: automatic classification of alerts; forecasting memory or CPU saturation; real-time anomaly detection and correlation; automated remediation actions such as service restarts, VM migration, or escalation to experts.
+
+\subsubsection*{AI-enhanced KPIs}
+AI can reduce MTTR and false positives and increase the proportion of automatically handled alerts; empirical industry reports note MTTR reductions of 30–50\% in some deployments \citep{Meta2024, Microsoft2024, Oxmaint2023}.
+
+\subsection{Typologies and criteria for classifying IT alerts}
+Alerts should be classified by severity, frequency, technical origin, and business impact. Traditional threshold-based classification is limited; AI enables context-aware, multi-criteria classification that links technical signals with business impact.
+
+\subsection{Overview of existing monitoring solutions}
+Table~\ref{tab:comparatif_supervision} summarizes several popular solutions and their capabilities.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of Major IT Monitoring Solutions}
+\label{tab:comparatif_supervision}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{2.2cm}|p{1.8cm}|p{2.3cm}|p{2.5cm}|p{2.6cm}|p{2.5cm}|p{2cm}|}
+\hline
+\textbf{Tool} & \textbf{Nagios-based} & \textbf{Alert Classification} & \textbf{Event Correlation} & \textbf{Automation} & \textbf{User Interface} & \textbf{Cloud-native} \\
+\hline
+Centreon & Yes & Severity (OK, Warning, Critical) & Low & Low to medium (scripts) & Modern with dashboards & Partial \\
+\hline
+Nagios & Yes & Severity (thresholds) & None & Very low (manual) & Basic (CGI) & No \\
+\hline
+Icinga & Yes & Severity (thresholds) & Medium & Medium (API + DevOps) & Advanced (Web + API) & Yes \\
+\hline
+Naemon & Yes & Severity (thresholds) & Low & Medium (Thruk + scripts) & Thruk interface & No \\
+\hline
+Zabbix & No & Advanced (conditions, dependencies) & Medium to high & High (integrated actions) & Complete and responsive & Yes \\
+\hline
+Prometheus & No & Time series + rules & Low (Alertmanager) & Medium (scripts, API) & Grafana (very advanced) & Yes \\
+\hline
+Splunk ITSI & No & Advanced (KPI, ML) & High (AIOps, ML) & High (playbooks, ML) & Very advanced (Web) & Yes \\
+\hline
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Automation and orchestration in incident management}
+Automation executes tasks without human intervention; orchestration sequences tasks into conditional workflows. Tools used include Ansible, StackStorm, Rundeck; integration with ITSM solutions (ServiceNow, OTRS) is common. AIOps adds intelligent correlation, anomaly detection, and automated remediation \citep{kephart2003, splunk2022}.
+
+\subsection{Anomaly detection and predictive maintenance}
+Historical evolution: corrective → preventive → condition-based → predictive maintenance; modern approaches leverage deep learning (LSTM/GRU), autoencoders, transformers, and self-supervised learning for scarce labels \citep{jardine2006review, heng2009rotating, du2017deeplog, hundman2018detecting}.
+
+\subsubsection*{Recent developments}
+Deep architectures for sequential data, self-supervised and contrastive representation learning, unsupervised/hybrid methods, and XAI are central research trends \citep{tuli2022predictive, chalapathy2019deep, arrieta2020explainable}.
+
+\subsubsection*{Case studies}
+Applications span manufacturing, transportation, energy, data centers, and aerospace where time-series and log analysis reduce downtime and improve reliability.
+
+\subsection{Current limitations and technical challenges}
+Challenges include data quality and integration, ethical/privacy concerns, scalability and adaptability, and human-AI collaboration. Addressing these is critical to operational adoption.
+
+\section{Methods}
+This section provides a detailed overview of the methods and tools deployed to integrate AI into a conventional IT monitoring system. The implementation described for this project uses a reproducible modular architecture and open-source tools.
+
+\textbf{1. Simulated data acquisition}\\
+A laboratory environment on Google Cloud Platform (GCP) was used to simulate VMs generating alerts (CPU, memory, disk, service failures). This preserves confidentiality and enables controlled dataset creation.
+
+\textbf{2. Alert collection via Centreon}\\
+Centreon agents and plugins (Nagios, SNMP) collect metrics and centralize events into MariaDB for persistence and subsequent analysis \citep{centreon2024}.
+
+\textbf{3. Data storage}\\
+MariaDB stores logs, metrics and alerts, enabling SQL-based extraction and reliable persistence.
+
+\textbf{4. Data extraction and preparation}\\
+Python scripts (Pandas, NumPy) perform cleaning, deduplication, missing value handling, and time-sequence structuring for ML models.
+
+\textbf{5. Data analysis and visualization}\\
+TensorFlow for deep learning (GRU), Scikit-learn for classical models and metrics, Matplotlib/Seaborn for charts in exploratory analysis.
+
+\textbf{6. AI modeling}\\
+GRU networks were used to model temporal dependencies and predict imminent incidents via supervised training; classical models (XGBoost, Random Forest) were used for tabular classification baselines.
+
+\textbf{7. Automated alert handling}\\
+Rundeck orchestrates remediation scripts and integrates with OTRS for ticketing; a FastAPI endpoint exposes the predictive model for proactive checks.
+
+\textbf{8. Dashboard}\\
+Streamlit provides an interactive interface for real-time KPIs, filtering by host/status, and visualization of model outputs.
+
+\section*{Conclusion}
+The integration of AI into monitoring, automation, and maintenance provides significant operational benefits but raises challenges regarding data quality, ethics, scalability, and human oversight. This project demonstrates a modular, replicable approach that balances automation with explainability and human validation.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

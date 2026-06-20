@@ -1,0 +1,29 @@
+services:
+  api:
+    build: .
+    container_name: bmce-credit-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+      - ./data:/app/data
+    environment:
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-development-only-secret-change-before-production}
+      JWT_ACCESS_TOKEN_MINUTES: ${JWT_ACCESS_TOKEN_MINUTES:-30}
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      AUTH_DB_PATH: /app/data/auth.db
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+
+  dashboard:
+    build: .
+    container_name: bmce-credit-dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+    command: streamlit run dashboard/app.py --server.address 0.0.0.0 --server.port 8501
+    depends_on:
+      - api

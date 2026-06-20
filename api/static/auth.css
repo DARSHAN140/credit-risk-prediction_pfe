@@ -1,0 +1,144 @@
+:root {
+  color-scheme: dark;
+  --ink: #edf4ff;
+  --muted: #91a4bb;
+  --panel: rgba(12, 26, 44, .88);
+  --panel-strong: #0f2239;
+  --line: rgba(148, 163, 184, .22);
+  --blue: #4f8cff;
+  --cyan: #39d4ff;
+  --green: #36d38a;
+  --red: #ff7474;
+  --shadow: 0 30px 90px rgba(0, 0, 0, .38);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(79, 140, 255, .18), transparent 30%),
+    radial-gradient(circle at 90% 85%, rgba(57, 212, 255, .12), transparent 28%),
+    #06101d;
+}
+
+button, input, select { font: inherit; }
+
+.shell {
+  width: min(1180px, calc(100% - 32px));
+  min-height: 720px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  background: rgba(7, 18, 32, .82);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.brand-panel {
+  padding: 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    linear-gradient(150deg, rgba(20, 54, 91, .92), rgba(7, 28, 49, .96)),
+    #0c1c30;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-panel::after {
+  content: "";
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(57, 212, 255, .14);
+  border-radius: 50%;
+  right: -170px;
+  bottom: -120px;
+  box-shadow: 0 0 0 70px rgba(57, 212, 255, .03), 0 0 0 140px rgba(57, 212, 255, .02);
+}
+
+.brand-mark {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: #04111e;
+  font-weight: 900;
+  letter-spacing: -.05em;
+}
+
+.brand-copy { position: relative; z-index: 1; }
+.eyebrow { color: var(--cyan); text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight: 800; margin: 0 0 9px; }
+.brand-copy h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: .98; letter-spacing: -.055em; max-width: 460px; margin: 0 0 24px; }
+.brand-copy > p:last-child { color: #b5c8dd; font-size: 1.02rem; line-height: 1.7; max-width: 440px; }
+.security-note { color: #b9ccde; font-size: .84rem; display: flex; align-items: center; gap: 10px; position: relative; z-index: 1; }
+.pulse { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(54, 211, 138, .12); }
+
+.auth-panel { padding: 46px; overflow-y: auto; max-height: 900px; }
+.card { max-width: 580px; margin: 0 auto 20px; padding: 28px; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; }
+.card h2 { margin: 0 0 8px; font-size: 1.65rem; letter-spacing: -.03em; }
+.muted { color: var(--muted); line-height: 1.5; }
+label { display: block; color: #c7d5e5; font-weight: 700; font-size: .84rem; margin: 18px 0 7px; }
+input, select {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, .27);
+  border-radius: 11px;
+  background: rgba(5, 15, 27, .72);
+  color: var(--ink);
+  padding: 12px 13px;
+  outline: none;
+  transition: border .18s ease, box-shadow .18s ease;
+}
+input:focus, select:focus { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(79, 140, 255, .12); }
+.password-field { position: relative; }
+.password-field input { padding-right: 86px; }
+.reveal { position: absolute; right: 7px; top: 7px; background: transparent; border: 0; color: var(--cyan); padding: 6px; cursor: pointer; font-size: .78rem; }
+.primary, .secondary, .icon-button { border: 0; cursor: pointer; font-weight: 800; border-radius: 11px; }
+.primary { width: 100%; padding: 12px 16px; margin-top: 22px; color: #06101d; background: linear-gradient(135deg, var(--blue), var(--cyan)); }
+.primary:hover { filter: brightness(1.08); }
+.secondary { padding: 11px 15px; color: var(--ink); background: transparent; border: 1px solid var(--line); }
+.fine-print, .password-hint { color: #71859d; text-align: center; font-size: .76rem; }
+.password-hint { text-align: left; }
+.message { max-width: 580px; margin: 0 auto 16px; border-radius: 11px; padding: 12px 14px; background: rgba(255, 116, 116, .12); border: 1px solid rgba(255, 116, 116, .32); color: #ffd0d0; }
+.message.success { color: #b8f5d3; background: rgba(54, 211, 138, .1); border-color: rgba(54, 211, 138, .3); }
+.account-header, .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.role-badge { color: #c9f5ff; border: 1px solid rgba(57, 212, 255, .3); background: rgba(57, 212, 255, .08); border-radius: 999px; padding: 7px 11px; font-size: .72rem; text-transform: uppercase; font-weight: 900; }
+.actions { display: flex; gap: 10px; margin-top: 22px; }
+.link-button { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; margin: 0; width: auto; }
+.icon-button { width: 36px; height: 36px; color: var(--cyan); background: rgba(57, 212, 255, .08); border: 1px solid rgba(57, 212, 255, .2); }
+.user-form { display: grid; grid-template-columns: 1fr 1.2fr; gap: 9px; margin: 20px 0; }
+.user-form .primary { margin: 0; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+th, td { text-align: left; padding: 11px 8px; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); text-transform: uppercase; letter-spacing: .07em; font-size: .66rem; }
+td select { padding: 7px; min-width: 115px; }
+.status-active { color: var(--green); }
+.status-inactive { color: var(--red); }
+.small-button { border: 1px solid var(--line); background: transparent; color: var(--ink); border-radius: 8px; padding: 7px 9px; cursor: pointer; }
+
+[hidden] { display: none !important; }
+
+@media (max-width: 850px) {
+  .shell { grid-template-columns: 1fr; margin: 16px auto; }
+  .brand-panel { min-height: 330px; padding: 32px; }
+  .brand-copy h1 { font-size: 2.8rem; }
+  .auth-panel { padding: 24px; max-height: none; }
+}
+
+@media (max-width: 520px) {
+  .shell { width: calc(100% - 18px); border-radius: 17px; }
+  .brand-panel { min-height: 290px; padding: 25px; }
+  .card { padding: 20px; }
+  .user-form { grid-template-columns: 1fr; }
+}
