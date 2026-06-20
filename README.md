@@ -1,6 +1,6 @@
 # Systeme intelligent de prediction du risque de credit BMCE
 
-Projet PFE simplifie et realisable en trois semaines : preprocessing, feature engineering, comparaison de plusieurs modeles ML, explicabilite globale, API REST et monitoring simple.
+Projet PFE  preprocessing, feature engineering, comparaison de plusieurs modeles ML, explicabilite globale, API REST et monitoring simple.
 
 Important : le dataset utilise dans ce projet est synthetique. Les resultats doivent etre presentes comme une validation methodologique du pipeline et du prototype applicatif, pas comme une validation bancaire reelle ni comme une preuve de performance en production.
 
@@ -144,11 +144,11 @@ Si `py -3.11` ne marche pas, installez Python 3.11 depuis le site officiel de Py
 
 ## Planning 3 semaines
 
-Semaine 1 : EDA, preprocessing, feature engineering, baseline logistic regression.
+ EDA, preprocessing, feature engineering, baseline logistic regression.
 
-Semaine 2 : Random Forest, XGBoost, GridSearchCV, evaluation comparative, SHAP global.
+ Random Forest, XGBoost, GridSearchCV, evaluation comparative, SHAP global.
 
-Semaine 3 : API FastAPI, Docker, Docker Compose, dashboard Streamlit, documentation finale.
+ API FastAPI, Docker, Docker Compose, dashboard Streamlit, documentation finale.
 
 ## Bonnes pratiques bancaires
 
@@ -158,6 +158,4 @@ Semaine 3 : API FastAPI, Docker, Docker Compose, dashboard Streamlit, documentat
 - Logger chaque prediction pour assurer la tracabilite.
 - Presenter SHAP comme outil d'aide a l'explication, pas comme preuve causale.
 
-## Limites
 
-Ce projet reste volontairement compact : donnees synthetiques, pas de validation bancaire reelle, pas de deep learning, pas de PSI industriel, pas de moteur IFRS 9 complet, pas de drift detection avancee. Ces choix rendent le PFE plus realiste sur trois semaines et plus facile a defendre.
