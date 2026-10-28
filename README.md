@@ -1,4 +1,4 @@
-# Systeme intelligent de prediction du risque de credit BMCE
+# Systeme intelligent de prediction du risque de credit 
 
 Projet PFE  preprocessing, feature engineering, comparaison de plusieurs modeles ML, explicabilite globale, API REST et monitoring simple.
 
@@ -142,20 +142,6 @@ pip install -r requirements.txt
 
 Si `py -3.11` ne marche pas, installez Python 3.11 depuis le site officiel de Python, puis relancez les commandes.
 
-## Planning 3 semaines
 
- EDA, preprocessing, feature engineering, baseline logistic regression.
-
- Random Forest, XGBoost, GridSearchCV, evaluation comparative, SHAP global.
-
- API FastAPI, Docker, Docker Compose, dashboard Streamlit, documentation finale.
-
-## Bonnes pratiques bancaires
-
-- Exclure les variables de fuite comme `score_defaut`, `niveau_risque` et `decision` des features.
-- Conserver un jeu de test temporel lorsque `date_demande` est disponible.
-- Suivre prioritairement `ROC-AUC`, `Recall`, `KS` et `Gini`, pas uniquement l'accuracy.
-- Logger chaque prediction pour assurer la tracabilite.
-- Presenter SHAP comme outil d'aide a l'explication, pas comme preuve causale.
 
 
